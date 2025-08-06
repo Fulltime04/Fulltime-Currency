@@ -7,7 +7,7 @@ for (let i = 0; i < 50; i++) {
 }
 
 function createFloatingBall() {
-    const ball = document.createElement('div');
+    const ball = document.createElement('canvas');
     ball.className = 'floating-ball';
 
     // Random properties
@@ -47,7 +47,7 @@ function createBubbleExplosion(x, y) {
 }
 
 function createBubble(x, y) {
-    const bubble = document.createElement('div');
+    const bubble = document.createElement('canvas');
     bubble.className = 'bubble';
 
     // Random properties

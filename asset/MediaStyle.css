@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 @media only screen and (max-width: 1029.33px) {
     .Section_Wrapper{
@@ -77,6 +78,11 @@
 @media only screen and (max-width: 768px) {
     .Answer{
         width: 100% !important;
+        height: 60px;
+    }
+    .convert_BTN{
+        height: 100px !important;
+        margin: 15px auto !important;
     }
 }
 @media only screen and (max-width: 690px) {
@@ -91,20 +97,19 @@
             font-size: 1rem !important;
         }
 
-    .convert_BTN{
-        height: 130px !important;
-        margin: 15px auto !important;
-    }
+
 }
 
 @media only screen and (max-width: 580px) {
     .Answer{
         font-size: 0.99rem !important;
         width: 100% !important;
+
     }
 
+
     .convert_BTN{
-        height: 130px !important;
+        height: 70px !important;
         margin: 15px auto !important;
     }
     .Section_Wrapper{

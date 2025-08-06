@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@media only screen and (max-width: 1029.33px) {
+    .Section_Wrapper{
+        width: 80%;
+        min-height: fit-content;
+        top: 30px;
+
+    }
+
+
+    .Content{
+        width: 80%;
+        height: 95%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .FulltimeCurrency{
+        font-size: 2.2rem !important;
+
+    }
+
+    .TextTitle{
+        h2{
+            font-size: 1.2rem !important;
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 850px) {
+    .TextTitle{
+        h2{
+            font-size: 1.2rem !important;
+        }
+    }
+    .FulltimeCurrency{
+        font-size: 1.8rem !important;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+.Price_Coin_Container{
+    flex-direction: column;
+    /*border: 2px solid white;*/
+    gap: 10px;
+    height: 400px !important;
+    margin: 10px auto !important;
+}
+.Currencies{
+    height: 150px !important;
+}
+
+.convert_BTN{
+   height: 140px !important;
+    margin: 15px auto !important;
+}
+    .Price_Coin_Container {
+        .Price {
+            width: 100% !important;
+            /*border: 2px solid red;*/
+        }
+
+        .Currency {
+            height: 100%;
+            width: 100% !important;
+
+        }
+    }
+}
+
+
+@media only screen and (max-width: 690px) {
+    .FulltimeCurrency{
+        font-size: 1.5rem !important;
+        padding: 8px;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+        .Answer{
+            font-size: 1rem !important;
+        }
+
+    .convert_BTN{
+        height: 130px !important;
+        margin: 15px auto !important;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .Answer{
+        font-size: 0.99rem !important;
+        width: 100% !important;
+    }
+
+    .convert_BTN{
+        height: 130px !important;
+        margin: 15px auto !important;
+    }
+    .Section_Wrapper{
+        width: 82%;
+        /*height: 450px;*/
+        position: relative;
+        top: 30px;
+
+    }
+
+    .Content{
+        /*border: 2px solid red;*/
+        width: 85%;
+    }
+
+    .Main_Content{
+        padding: 1.3em 1.1rem !important;
+
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .FulltimeCurrency{
+        font-size: 1.2rem !important;
+        padding: 8px;
+    }
+    .Content{
+        h1{
+            font-size: 1.2rem !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .Section_Wrapper {
+        width: 90%;
+        /*height: 450px;*/
+        position: relative;
+        top: 30px;
+    }
+
+}

@@ -3,17 +3,20 @@
     padding: 0;
     box-sizing: border-box;
     transition: 0.5s ease-in-out;
+
+
 }
 body {
     margin: 0;
-    overflow: hidden !important;
     background-color: black;
     font-family: 'Arial', sans-serif;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 
@@ -85,10 +88,13 @@ body {
     width: 100%;
     height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
     background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
+    /*border: 2px solid red;*/
 }
 
 .Section_Wrapper{
@@ -106,9 +112,14 @@ body {
 .TextTitle{
     font-family: 'Arial', sans-serif;
     font-size: 1.2rem;
-    padding: 14px;
+    height: 12%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
     color: white;
-    background-color: rgba(4, 5, 4, 0.99);
+    background: rgba(4, 5, 4, 0.99);
     text-align: center;
 }
 
@@ -116,10 +127,13 @@ body {
     margin-top: 10px;
     width: 100%;
     height: 80%;
+    position: absolute;
+    top: 70px;
     background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
+    /*border: 2px solid blue;*/
 
 }
 .Content{
@@ -139,13 +153,18 @@ body {
         font-family: 'Arial', sans-serif;
         background: rgb(34, 253, 8);
         text-align: center;
-        padding: 5px;
+        height: 10%;
+        display: flex;
+       justify-content: center;
+        align-items: center;
+
     }
 
     .Answer{
         font-family: 'Arial', sans-serif;
         font-size: 1.2rem;
         padding: 7px 0;
+        height: 12%;
         width: 70%;
         justify-self: center;
         color: black;
@@ -153,12 +172,13 @@ body {
         background: rgba(255, 255, 255, 0.95);
         font-weight: 600;
         border-radius: 5px;
+
     }
 
     .Price_Coin_Container{
         margin: 20px auto;
         width: 100%;
-        height: 45px;
+        height: 20%;
         /*border: 1px solid rgb(12, 238, 12);*/
         display: flex;
         align-items: center;
@@ -213,7 +233,7 @@ body {
     }
 
     .Currencies{
-        height: 45px;
+        height: 18%;
         width: 100%;
         background: rgba(0, 0, 0, 0.96);
         border-radius: 5px;
@@ -235,7 +255,7 @@ body {
     .convert_BTN{
         width: 75%;
         margin: 25px auto;
-        height: 35px;
+        height: 16%;
         font-family: 'Arial', sans-serif;
         font-size: 1.2rem;
         background: linear-gradient(40deg,rgb(34, 253, 8),yellow);
@@ -250,7 +270,7 @@ body {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        height: 85%;
+        height: 90%;
     }
     .Answer{
         display: flex;
@@ -323,3 +343,7 @@ body {
     color: white;
 }
 
+.Section_Wrapper {
+    min-height: 80%;
+    height: auto;
+}

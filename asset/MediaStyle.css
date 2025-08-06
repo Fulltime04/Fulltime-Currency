@@ -5,12 +5,7 @@
     overflow: hidden;
 }
 @media only screen and (max-width: 1029.33px) {
-    .Section_Wrapper{
-        width: 80%;
-        min-height: fit-content;
-        top: 30px;
 
-    }
 
 
 
@@ -30,8 +25,14 @@
 
 
 }
+@media only screen and (max-width: 900px) {
+    .Section_Wrapper {
+        /*min-height: 70%;*/
+    }
+}
 
-@media only screen and (max-width: 850px) {
+
+@media only screen and (max-width: 855px) {
     .TextTitle{
         h2{
             font-size: 1.2rem !important;
@@ -39,6 +40,22 @@
     }
     .FulltimeCurrency{
         font-size: 1.8rem !important;
+    }
+    .Price_Coin_Container{
+       flex-direction: column;
+        height: 50% !important;
+    }
+    .Price_Coin_Container {
+        .Price {
+            width: 100% !important;
+            /*border: 2px solid red;*/
+        }
+
+        .Currency {
+            height: 100%;
+            width: 100% !important;
+
+        }
     }
 }
 
@@ -58,18 +75,7 @@
     height: 65px !important;
     margin: 15px auto !important;
 }
-    .Price_Coin_Container {
-        .Price {
-            width: 100% !important;
-            /*border: 2px solid red;*/
-        }
 
-        .Currency {
-            height: 100%;
-            width: 100% !important;
-
-        }
-    }
 }
 
 @media only screen and (max-width: 768px) {

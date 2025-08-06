@@ -1,6 +1,6 @@
 console.log('Happy developing ✨')
 // Create floating balls
-const colors = ['rgba(193,10,245,0.94)', '#75d90b', '#f16203', '#ffc100', '#B5EAD7', '#C7CEEA'];
+const colors = ['rgba(193,10,245,0.94)', '#75d90b', '#f16603', '#f7ff07', '#B5EAD7', '#C7CEEA'];
 
 for (let i = 0; i < 50; i++) {
     createFloatingBall();

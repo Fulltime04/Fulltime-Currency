@@ -74,7 +74,11 @@
     }
 }
 
-
+@media only screen and (max-width: 768px) {
+    .Answer{
+        width: 100% !important;
+    }
+}
 @media only screen and (max-width: 690px) {
     .FulltimeCurrency{
         font-size: 1.5rem !important;
@@ -132,14 +136,39 @@
             font-size: 1.2rem !important;
         }
     }
+
+    .convert_BTN{
+        padding: .1em 1.1rem !important;
+        font-size: 1rem !important;
+    }
 }
 
 @media only screen and (max-width: 400px) {
     .Section_Wrapper {
         width: 90%;
-        /*height: 450px;*/
         position: relative;
         top: 30px;
+    }
+
+    .TextTitle{
+
+        padding: 10px;
+        h2{
+            font-size: .8em !important;
+
+        }
+    }
+
+}
+
+@media only screen and (max-width: 360px) {
+    .Section_Wrapper {
+        width: 95% !important;
+        /*border: 2px solid red !important;*/
+    }
+    .Content{
+        width: 90%;
+        /*border: 2px solid red !important;*/
     }
 
 }

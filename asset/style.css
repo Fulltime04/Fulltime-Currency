@@ -4,21 +4,45 @@
     box-sizing: border-box;
     transition: 0.5s ease-in-out;
 
-
 }
-body {
-    margin: 0;
-    background-color: black;
+
+body{
+    width: 100%;
+    height: 100dvh;
+    /*min-height: fit-content;*/
+    background: black;
     font-family: 'Arial', sans-serif;
+    overflow: hidden !important;
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    height: 100vh;
-    overflow-x: hidden;
+    flex-direction: column;
 }
 
+.hidden{
+    overflow-y: auto !important;
+}
+.loader{
+    width: 100%;
+    height: 100%;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+
+}
+/*body::-webkit-scrollbar-thumb {*/
+/*    background: white;*/
+/*    border-radius: 10px;*/
+/*}*/
 
 
 .floating-ball {
@@ -27,11 +51,7 @@ body {
     top: 0;
     border-radius: 50%;
     animation: float 5s infinite ease-in-out;
-    z-index: 1;
-    filter: blur(1px);
-    box-shadow:
-            0 0 20px rgba(252, 0, 0, 0.5),
-            inset 0 0 10px rgba(48, 236, 8, 0.3);
+    z-index: 0;
 }
 
 .bubble {
@@ -63,50 +83,74 @@ body {
     }
 }
 
-.container{
+.container {
     width: 100%;
-    height: 100%;
+    height: 70% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: none;
-    overflow: hidden !important;
-    cursor: pointer;
-
+    /*border: 2px solid red;*/
+    min-height: fit-content;
+    margin-top: 135px;
+    flex-direction: column;
+    flex: 70% 0 0;
 }
 
-.header_Wrapper{
-    font-family: 'Arial', sans-serif;
-    font-size: 1.2rem;
+
+.header_Wrapper {
     width: 100%;
-    text-align: center;
-    padding: .4rem 0;
-    background: linear-gradient(40deg,rgb(34, 253, 8),gold);
-    position: absolute;
+    display: flex;
+    height: 12%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(40deg, rgb(0, 2, 0), #332b00);
     backdrop-filter: blur(10px);
-    z-index: 6;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 199;
+    text-align: center;
+    min-height: fit-content;
+    font-size: 1.3em;
+    flex: 12% 0 0 !important;
+    border-top: 1px solid gray;
 }
 
-.Main_Wrapper{
+
+.Footer_Wrapper{
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: transparent;
+    height: 15%;
+    /*border: 2px solid red;*/
+    background: #332b00;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    /*border: 2px solid red;*/
+    min-height: fit-content;
+    z-index: 999;
+    margin-top: 50px;
+    position: relative;
+    flex: 15% 0 0;
+    text-align: center;
+    padding: 5px;
+    font-size: 1.5em;
 }
 
 .Section_Wrapper{
     width: 70%;
-    height: 80%;
-    position: relative;
-    top: 30px;
+    height: 100%;
     border-radius: 20px;
-    background: rgba(12, 238, 12, 0.26);
+    background: rgba(51, 43, 0, 0.78);
     z-index: 99;
     backdrop-filter: blur(7px);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid gray;
+
 }
 
 .TextTitle{
@@ -117,84 +161,61 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     color: white;
     background: rgba(4, 5, 4, 0.99);
     text-align: center;
+
 }
 
 .Content_Wrapper{
-    margin-top: 10px;
     width: 100%;
-    height: 80%;
-    position: absolute;
-    top: 70px;
+    height: 88%;
     background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    /*border: 2px solid blue;*/
+    min-height: fit-content;
+    /*border: 2px solid red;*/
 
 }
 .Content{
     width: 70%;
-    height: 98% !important;
+    height: 95% !important;
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     /*border: 2px solid red;*/
+    min-height: fit-content;
 }
+
 
 .Content{
     .Main_Content{
-        padding: 1.3rem 2rem;
+        padding: 1.3rem 1rem;
     }
-    h1{
-        font-family: 'Arial', sans-serif;
-        background: rgb(34, 253, 8);
-        text-align: center;
-        height: 10%;
-        display: flex;
-       justify-content: center;
-        align-items: center;
 
-    }
 
     .Answer{
-        font-family: 'Arial', sans-serif;
-        font-size: 1.2rem;
-        padding: 7px 0;
-        height: 12%;
-        width: 70%;
-        justify-self: center;
-        color: black;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.95);
-        font-weight: 600;
-        border-radius: 5px;
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .Price_Coin_Container{
-        margin: 20px auto;
-        width: 100%;
-        height: 20%;
-        /*border: 1px solid rgb(12, 238, 12);*/
         display: flex;
         align-items: center;
         justify-content: space-between;
-        /*padding: 0 1rem;*/
-
+        gap: 10px;
     }
     .Price_Coin_Container{
         .Price{
-            width: 48%;
-            height: 100%;
+            width: 50%;
+            height: 90%;
             /*border: 2px solid white;*/
         }
         input{
             width: 100%;
-            height: 90%;
+            height: 100%;
             background: rgba(204, 186, 186, 0.07);
             border-radius: 5px;
             outline: none;
@@ -206,13 +227,13 @@ body {
         }
 
         .Currency{
-            height: 100%;
-            width: 48%;
-
+            height: 90%;
+            width: 50%;
+            /*border: 2px solid white;*/
         }
         .Currencys{
             width: 100%;
-            height:90%;
+            height: 100%;
             font-family: 'Arial', sans-serif;
             background: rgba(12, 11, 11, 0.24);
             border: .5px groove rgba(128, 128, 128, 0.88);
@@ -233,17 +254,18 @@ body {
     }
 
     .Currencies{
-        height: 18%;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.96);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         border-radius: 5px;
-        border: .5px groove rgba(128, 128, 128, 0.88);
+        /*border: .5px groove rgba(128, 128, 128, 0.88);*/
     }
     .to{
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 80%;
         background: rgba(0, 0, 0, 0.18);
-        color: rgb(34, 253, 8);
+        color: white;
         cursor: pointer;
 
         option{
@@ -253,49 +275,46 @@ body {
 
 
     .convert_BTN{
-        width: 75%;
-        margin: 25px auto;
-        height: 16%;
+        height: 80%;
+        width: 50%;
         font-family: 'Arial', sans-serif;
         font-size: 1.2rem;
-        background: linear-gradient(40deg,rgb(34, 253, 8),yellow);
+        background: linear-gradient(40deg,black,#332b00);
         font-weight: bold;
         cursor: pointer;
+        color: white;
     }
 
     .Main_Content{
         width: 100%;
-        /*border: 2px solid red;*/
+        /*border: 2px solid yellow;*/
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        height: 90%;
-    }
-    .Answer{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        height: 87%;
         gap: 10px;
-        position: relative;
-
+        min-height: fit-content;
     }
+
 
 
 }
 
 .animate {
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
     background: rgb(34, 253, 8);
     border-radius: 50%;
-    animation: animate 2s infinite;
+    animation: animate 1.8s infinite;
     position: relative;
     bottom: -5px;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     margin: 5px;
-    font-size: .5em;
-    align-content: center;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -305,7 +324,7 @@ body {
         transform: scale(1);
     }
     50% {
-        bottom: 5px;
+        bottom: 15px;
         transform: scale(1.1);
     }
     100% {
@@ -313,37 +332,61 @@ body {
         transform: scale(1);
     }
 }
-    .animate:nth-child(1) {
-        animation-delay: 0.5s;
-        background: gold;
-    }
-.animate:nth-child(3) {
-    animation-delay: 1s;
-    background: black;
-    color: red;
-}
-.animate:nth-child(4) {
-    animation-delay: 1.5s;
-    background: purple;
-    color: rgb(34, 253, 8);
-}
-.animate:nth-child(8) {
-    animation-delay: 1.6s;
-    background: black;
-    color: gold;
-}
-.animate:nth-child(5) {
-    animation-delay: 0.2s;
-    background: red;
+
+.ConvertHere_Wrapper{
+    width: 100%;
+    height: 13%;
+    flex: 13% 0 0;
+    background: linear-gradient(40deg, rgba(0, 2, 0, 0.78), #332b00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+
+
+
+    h1{
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+
+
+
+    }
 }
-.animate:nth-child(6) {
-    animation-delay: 0.8s;
-    background: blue;
+
+.great{
+    height: calc(100% / 4);
+    width: 100%;
+    min-height: fit-content;
+    /*border: 2px solid white;*/
+
+}
+::selection{
+    background-color: #332b00;
     color: white;
 }
 
-.Section_Wrapper {
-    min-height: 80%;
-    height: auto;
+.Main_Ans{
+    width: 80%;
+    height: 80%;
+    background: rgba(255, 255, 255, 0.81);
+    color: black;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    justify-self: center;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.buttonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

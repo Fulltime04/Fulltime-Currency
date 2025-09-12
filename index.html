@@ -3,34 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="asset/style.css">
     <link rel="stylesheet" href="asset/MediaStyle.css">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="asset/css/all.min.css">
-
 </head>
 <body>
-<div class="container">
+<div class="loader"></div>
     <header class="header_Wrapper">
         <h1 class="FulltimeCurrency">
             Fulltime-Smart Crypto ⇒ Currency Converter
         </h1>
     </header>
 
-    <main class="Main_Wrapper">
+    <div class="container">
+
             <section class="Section_Wrapper">
                 <div class="TextTitle">
                     <h2>Welcome to Fulltime Crypto Currencies, Converter?</h2>
                 </div>
                 <div class="Content_Wrapper">
                     <div class="Content">
-                        <h1>Convert Here?</h1>
+                        <div class="ConvertHere_Wrapper">
+                            <h1>Convert Here?</h1>
+                        </div>
+
                         <div class="Main_Content">
-                            <section class="Answer">
-                                ETH 234 = 2566(WETH)
+                            <section class="Answer great">
+                                <div class="Main_Ans">
+
+                                </div>
                             </section>
-                            <section class="Price_Coin_Container">
+                            <section class="Price_Coin_Container great">
                                 <div class="Price">
                                     <input id="amount" type="number" placeholder="Please enter your price" max="15">
                                 </div>
@@ -41,13 +45,17 @@
 
                                 </div>
                             </section>
-                            <section class="Currencies">
+                            <section class="Currencies great">
                                 <select class="to" id="toCurrency">
 
                                 </select>
 
                             </section>
-                            <button class="convert_BTN">Convert</button>
+
+                            <div class="great buttonContainer">
+                                <button class="convert_BTN">Convert</button>
+                            </div>
+
 
                         </div>
                     </div>
@@ -57,12 +65,11 @@
                 </div>
 
             </section>
-    </main>
 </div>
 
-
-
-
+<footer class="Footer_Wrapper">
+    <p>Real-time currency & crypto data, powered by Django, JavaScript, and API integrations. © 2025 Fulltime</p>
+</footer>
 <script src="index.js"></script>
 <script src="asset/js/all.min.js"></script>
 </body>

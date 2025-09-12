@@ -1,19 +1,43 @@
 console.log('Happy developing ✨')
 // Create floating balls
-const colors = ['rgba(193,10,245,0.94)', '#75d90b', '#f16603', '#f7ff07', '#B5EAD7', '#C7CEEA'];
+const colors = ['rgba(203,0,255,0.94)', '#332b00', '#110800', 'white'];
+function looping() {
+    let area = document.body.clientWidth * document.body.clientHeight;
+    let Counting;
 
-for (let i = 0; i < 50; i++) {
-    createFloatingBall();
+    if (window.innerWidth > 1200) {
+        Counting = Math.floor(area / 20000);
+    }else if (window.innerWidth > 768) {
+        Counting = Math.floor(area / 9000);
+    }else{
+        Counting = Math.floor(area / 7000);
+    }
+
+    for (let i = 0; i < Counting; i++) {
+        createFloatingBall();
+    }
 }
+looping()
+
+// window.addEventListener('resize', looping);
 
 function createFloatingBall() {
     const ball = document.createElement('canvas');
     ball.className = 'floating-ball';
 
-    // Random properties
-    const size = Math.random() * 100 + 50;
+    // Adjust bubble size based on screen width
+    let size;
+    if (window.innerWidth > 1200) {
+        size = Math.random() * 40 + 40; // 40px - 120px (large screens)
+    } else if (window.innerWidth > 768) {
+        size = Math.random() * 25 + 25; // 25px - 75px (tablets)
+    } else {
+        size = Math.random() * 10 + 15; // 15px - 45px (phones)
+    }
+
+    // Random position
     const x = Math.random() * window.innerWidth;
-    const y = Math.random() * window.innerHeight;
+    const y = Math.random() * document.body.clientHeight;
     const color = colors[Math.floor(Math.random() * colors.length)];
 
     // Set styles
@@ -22,7 +46,7 @@ function createFloatingBall() {
     ball.style.left = `${x}px`;
     ball.style.top = `${y}px`;
     ball.style.backgroundColor = color;
-    ball.style.opacity = Math.random() * 0.6 + 0.2;
+    ball.style.opacity = 0.8;
 
     // Set animation variables
     ball.style.setProperty('--x-move', `${Math.random() * 60 - 30}px`);
@@ -32,6 +56,7 @@ function createFloatingBall() {
     document.body.appendChild(ball);
 }
 
+
 // Create bubbles on click
 let container = document.querySelector(".container")
 document.addEventListener('click', (e) => {
@@ -39,7 +64,7 @@ document.addEventListener('click', (e) => {
 });
 
 function createBubbleExplosion(x, y) {
-    const bubbleCount = 100;
+    const bubbleCount = 60;
 
     for (let i = 0; i < bubbleCount; i++) {
         createBubble(x, y);
@@ -55,7 +80,7 @@ function createBubble(x, y) {
 
     const color = colors[Math.floor(Math.random() * colors.length)];
     const angle = Math.random() * Math.PI * 2;
-    const distance = Math.random() * 140;
+    const distance = Math.random() * 200;
 
     // Calculate starting position
     const startX = x + Math.cos(angle) * distance;
@@ -74,7 +99,7 @@ function createBubble(x, y) {
     // Remove bubble after animation
     setTimeout(() => {
         bubble.remove();
-    }, 1500);
+    }, 5000);
 }
 
 
@@ -84,7 +109,6 @@ convert_BTN.addEventListener("click", function (e) {
     alert("Praise the LORD")
     convertCurrency();
     document.getElementById("amount").value = "";
-
 });
 
 document.addEventListener("keydown", function(e) {
@@ -93,33 +117,50 @@ document.addEventListener("keydown", function(e) {
     }
 })
 
+const loader = document.querySelector(".loader");
 const fromSelect = document.getElementById("fromCurrency");
 const toSelect = document.getElementById("toCurrency");
+const resultDisplay = document.querySelector(".Main_Ans");
 
-
-
-async function populateCurrencies() {
+// Helper function for fetch with error handling
+async function fetchData(url) {
     try {
-        const response = await fetch(`http://data.fixer.io/api/symbols?access_key=bbcdd83974d483359d1c328eb30e593d`);
-        const data = await response.json();
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return await res.json();
+    } catch (err) {
+        console.error(err);
+        throw err;
+    }
+}
+
+// Populate currency dropdowns
+async function populateCurrencies() {
+    loader.style.display = "flex";
+
+    try {
+        const data = await fetchData("http://127.0.0.1:8000/api/symbols/");
         const symbols = data.symbols;
 
-
         for (let code in symbols) {
-            let option1 = new Option(`${symbols[code]} (${code})`, code);
-            let option2 = new Option(`${symbols[code]} (${code})`, code);
+            const option1 = new Option(`${symbols[code]} (${code})`, code);
+            const option2 = new Option(`${symbols[code]} (${code})`, code);
             fromSelect.add(option1.cloneNode(true));
             toSelect.add(option2.cloneNode(true));
         }
 
         fromSelect.value = "USD";
         toSelect.value = "NGN";
-    }catch (err){
-        alert("Your Internet connection is down")
-    }
 
+    } catch (err) {
+        alert("Failed to load currencies. Check your internet connection.");
+    } finally {
+        loader.style.display = "none";
+        document.body.classList.add("hidden")
+    }
 }
 
+// Convert currency
 async function convertCurrency() {
     const amount = document.getElementById("amount").value;
     const from = fromSelect.value;
@@ -130,43 +171,85 @@ async function convertCurrency() {
         return;
     }
 
-    try{
+    resultDisplay.textContent = "Loading conversion...";
+    try {
+        const data = await fetchData(`http://127.0.0.1:8000/api/convert/?from=${from}&to=${to}&amount=${amount}`);
 
 
-    // const url = `https://api.exchangerate.host/convert?from=${from}&to=${to}&amount=${amount}`;
-    let apiKey = `b4d4820017fc3d56d7ac8061`
-    const res = await fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/pair/${from}/${to}/${amount}`);
-    const data = await res.json();
-    console.log(data);
-
-    if(data.result === "success") {
-        animating()
-        alert("Request Successful");
-    }else{
-        alert("Request Failed due to your internet connection");
-    }
-
-
-
-    document.querySelector(".Answer").textContent =
-        `${amount} ${from} = ${data.conversion_result.toFixed(2)} ${to}`;
-    }catch(err){
-        document.querySelector(".Answer").innerHTML = `${err.message}? Please try again`;
+        if (data.result === "success") {
+            resultDisplay.textContent = `${amount} ${from} = ${data.conversion_result.toFixed(2)} ${to}`;
+        } else {
+            resultDisplay.textContent = "Conversion failed. Try again later.";
+        }
+    } catch (err) {
+        resultDisplay.textContent = `Error: ${err.message}`;
     }
 }
 
+// Event listener for convert button
+document.querySelector(".convert_BTN").addEventListener("click", convertCurrency);
+
+// Initialize
 populateCurrencies();
 
+
+
 function animating(){
-    let text = "FULLTIME"
-    for(let x = 0;x < 8;x++){
+    let text = "FULLTIME";
+    let colors = [
+        {
+            first: "white",
+            Tcols: "black",
+            delay: "0.2s"
+        },
+        {
+
+        first: "#332b00",
+        Tcols: "white",
+        delay: "0.1s"
+    },
+        {
+            first: "white",
+            Tcols: "black",
+            delay: "0.25s"
+        },
+        {
+            first: "#000000",
+            Tcols: "white",
+            delay: "0.3s"
+        },
+        {
+            first: "#332b00",
+            Tcols: "white",
+            delay: "0.35s"
+        },
+        {
+            first: "#000000",
+            Tcols: "white",
+            delay: "0.4s"
+        },
+        {
+            first: "#332b00",
+            Tcols: "white",
+            delay: "0.45s"
+        },
+        {
+            first: "white",
+            Tcols: "black",
+            delay: "0.5s"
+        },
+    ]
+    for(let x = 0;x < text.length;x++){
         let element = document.createElement("div");
             element.className = "animate";
-            element.innerHTML = text[x]
-        document.querySelector(".Answer").appendChild(element);
+            element.innerHTML = text[x];
+            element.style.backgroundColor = colors[x].first;
+            element.style.color = colors[x].Tcols;
+            element.style.animationDelay = colors[x].delay;
+            document.querySelector(".loader").appendChild(element);
 
     }
 }
-// animating();
+animating();
 
 console.log(window);

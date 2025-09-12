@@ -4,185 +4,300 @@
     box-sizing: border-box;
     overflow: hidden;
 }
-@media only screen and (max-width: 1029.33px) {
-
-
-
-
-}
-
-@media only screen and (max-width: 1000px) {
-    .FulltimeCurrency{
-        font-size: 2.2rem !important;
-
-    }
-
-    .TextTitle{
-        h2{
-            font-size: 1.2rem !important;
-        }
-    }
-
-
-}
-@media only screen and (max-width: 900px) {
-    .Section_Wrapper {
-        /*min-height: 70%;*/
-    }
-}
-
-
-@media only screen and (max-width: 855px) {
-    .TextTitle{
-        h2{
-            font-size: 1.2rem !important;
-        }
-    }
-    .FulltimeCurrency{
-        font-size: 1.8rem !important;
-    }
-    .Price_Coin_Container{
-       flex-direction: column;
-        height: 50% !important;
-    }
-    .Price_Coin_Container {
-        .Price {
-            width: 100% !important;
-            /*border: 2px solid red;*/
-        }
-
-        .Currency {
-            height: 100%;
-            width: 100% !important;
-
-        }
-    }
-}
-
-@media only screen and (max-width: 770px) {
-.Price_Coin_Container{
-    flex-direction: column;
-    gap: 10px;
-    height: 65% !important;
-    margin: 10px auto !important;
-}
-.Currencies{
-    /*height: 150px !important;*/
-    height: 30% !important;
-}
-
-.convert_BTN{
-    height: 65px !important;
-    margin: 15px auto !important;
-}
-
-}
-
-@media only screen and (max-width: 768px) {
-    .Answer{
-        width: 100% !important;
-        height: 15%;
-    }
-    .convert_BTN{
-
-        margin: 15px auto !important;
-    }
-}
-@media only screen and (max-width: 700px) {
-    .convert_BTN{
-        height: 60px !important;
-        margin: 10px auto !important;
-    }
-}
-@media only screen and (max-width: 690px) {
-    .FulltimeCurrency{
-        font-size: 1.5rem !important;
-        padding: 8px;
-    }
-}
-
-@media only screen and (max-width: 630px) {
-        .Answer{
-            font-size: 1rem !important;
-        }
-
-
-}
-
-@media only screen and (max-width: 580px) {
-    .Answer{
-        font-size: 0.99rem !important;
-        width: 100% !important;
-
-    }
-
-
-    .convert_BTN{
-        /*height: 70px !important;*/
-        margin: 15px auto !important;
-    }
+@media only screen  and (max-width: 1029.33px) {
     .Section_Wrapper{
-        width: 82%;
-        /*height: 450px;*/
-        position: relative;
-        top: 30px;
+        width: 80%;
+        min-height: fit-content;
+    }
+    .Content{
+        width: 85%;
 
     }
+}
 
-    .Content{
-        /*border: 2px solid red;*/
-        width: 85%;
+@media only screen  and (max-width: 980px) {
+    .TextTitle{
+        min-height: fit-content;
+        h2
+        {
+            font-size: 25px;
+        }
+    }
+}
+
+@media only screen  and (max-width: 950px) {
+    .FulltimeCurrency{
+       font-size: 36px
+    }
+}
+
+@media only screen and (max-width: 900px) {
+   .animate{
+       width: 40px;
+       height: 40px;
+   }
+    .loader{
+        gap: 20px;
+    }
+}
+
+@media only screen  and (max-width: 880px) {
+    .FulltimeCurrency{
+        font-size: 30px;
     }
 
     .Main_Content{
-        padding: 1.3em 1.1rem !important;
+        padding: 30px;
+        /*border: 2px solid white;*/
+    }
+}
 
+@media only screen  and (max-width: 850px) {
+.TextTitle{
+    h2{
+        font-size: 20px;
+    }
+
+}
+}
+
+@media only screen and (max-width: 800px) {
+    .Footer_Wrapper{
+        font-size: 1.2em;
+    }
+}
+@media only screen  and (max-width: 768px) {
+    body::-webkit-scrollbar {
+        display: none;
+
+    }
+}
+
+@media only screen  and (max-width: 750px) {
+    .FulltimeCurrency{
+        font-size: 30px;
+    }
+    .header_Wrapper{
+        padding: .8rem 0;
+    }
+}
+
+@media only screen  and (max-width: 700px) {
+    .Main_Content{
+        padding: 10px;
+        /*border: 2px solid white;*/
+        min-height: fit-content;
+    }
+   
+.Price_Coin_Container{
+    flex-direction: column;
+    /*border: 2px solid yellow;*/
+    min-height: fit-content;
+
+}
+    .Price{
+        flex: 50px 0 0;
+        width: 95% !important;
+    }
+    .Currency{
+        width: 95% !important;
+        flex: 50px 0 0;
+    }
+
+    .to{
+        width: 95% !important;
+        height: 100% !important;
+    }
+
+    .Currencies{
+        flex: 50px 0 0;
+        /*border: 2px solid red;*/
+    }
+
+    .buttonContainer{
+        flex: 45px 0 0;
+        /*border: 2px solid red;*/
+
+        .convert_BTN{
+            width: 80%;
+            height: 100% !important;
+        }
+    }
+
+    .Answer{
+        flex: 52px 0 0;
+    }
+
+    .Section_Wrapper{
+       gap: 10px !important;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+
+    .ConvertHere_Wrapper{
+        height: 50px;
+        flex: 50px 0 0 !important;
+    }
+    .TextTitle{
+        flex: 0 0 60px;
+    }
+
+    .FulltimeCurrency{
+        font-size: 28px;
+    }
+
+
+}
+
+@media only screen  and (max-width: 650px) {
+    .FulltimeCurrency{
+        width: 85%;
+        /*border: 2px solid white !important;*/
+        font-size: 30px;
+    }
+
+    .Main_Content{
+        padding: 1rem .8rem !important;
+    }
+    .container{
+        margin-top: 160px !important;
+    }
+
+}
+@media only screen  and (max-width: 600px) {
+    .container{
+        /*margin-top: 210px !important;*/
+    }
+
+        .animate{
+            width: 35px;
+            height: 35px;
+        }
+        .loader{
+            gap: 15px;
+        }
+
+}
+@media only screen  and (max-width: 599px) {
+    .container{
+        margin-top: 150px !important;
     }
 }
 
 @media only screen and (max-width: 550px) {
-    .FulltimeCurrency{
-        font-size: 1.2rem !important;
-        padding: 8px;
-    }
-    .Content{
-        h1{
-            font-size: 1.2rem !important;
-        }
+    .Section_Wrapper{
+        width: 90% !important;
     }
 
+}
+@media only screen  and (max-width: 515px) {
+
+        .animate{
+            width: 35px;
+            height: 35px;
+            font-size: .8em;
+        }
+        .loader{
+            gap: 10px;
+        }
+
+}
+@media only screen  and (max-width: 480px) {
+
+    .animate{
+        width: 32px;
+        height: 32px;
+        font-size: .8em;
+    }
+    .loader{
+        gap: 5px;
+    }
+
+}
+
+
+
+
+
+@media only screen and (max-width: 460px){
+    .Main_Ans{
+        font-size:1em;
+    }
     .convert_BTN{
-        padding: .1em 1.1rem !important;
-        font-size: 1rem !important;
+        font-size: 1em !important;
+        font-weight: 600;
+    }
+
+    .Answer{
+        flex: 45px 0 0;
     }
 }
 
 @media only screen and (max-width: 400px) {
-    .Section_Wrapper {
-        width: 90%;
-        position: relative;
-        top: 30px;
+    .Main_Content{
+        padding: .4rem .8rem !important;
+    }
+    .Footer_Wrapper{
+        font-size: 1em !important;
     }
 
-    .TextTitle{
 
-        padding: 10px;
-        h2{
-            font-size: .8em !important;
 
+        .animate{
+            width: 30px;
+            height: 30px;
+            font-size: .8em;
         }
+        .loader{
+            gap: 5px;
+        }
+
+
+}
+@media only screen  and (max-width: 380px) {
+    .FulltimeCurrency{
+        width: 100% !important;
+        font-size: 25px;
+
+    }
+    .animate{
+        width: 28px;
+        height: 28px;
+        font-size: .7em;
+    }
+    .loader{
+        gap: 5px;
+    }
+    .header_Wrapper{
+        height: 13%;
+        flex: 13% 0 0;
+    }
+    .container{
+        margin-top: 130px !important;
+        height: 65% !important;
+        flex: 65% 0 0 !important;
+
     }
 
 }
 
-@media only screen and (max-width: 360px) {
-    .Section_Wrapper {
-        width: 95% !important;
-        /*border: 2px solid red !important;*/
-    }
-    .Content{
-        width: 90%;
-        /*border: 2px solid red !important;*/
+@media only screen and (max-width: 320px) {
+    .TextTitle{
+        min-height: fit-content;
+        h2
+        {
+            font-size: 18px;
+        }
     }
 
+
+    .animate{
+        width: 25px;
+        height: 25px;
+        font-size: .7em;
+    }
+    .loader{
+        gap: 3px;
+    }
 }

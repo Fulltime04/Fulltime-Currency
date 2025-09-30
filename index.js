@@ -139,7 +139,7 @@ async function populateCurrencies() {
     loader.style.display = "flex";
 
     try {
-        const data = await fetchData("http://127.0.0.1:8000/api/symbols/");
+        const data = await fetchData("https://currencybackend-1.onrender.com/api/symbols/");
         const symbols = data.symbols;
 
         for (let code in symbols) {
@@ -173,8 +173,9 @@ async function convertCurrency() {
 
     resultDisplay.textContent = "Loading conversion...";
     try {
-        const data = await fetchData(`http://127.0.0.1:8000/api/convert/?from=${from}&to=${to}&amount=${amount}`);
-
+        const data = await fetchData(
+            `https://currencybackend-1.onrender.com/api/convert/?from=${from}&to=${to}&amount=${amount}`
+        );
 
         if (data.result === "success") {
             resultDisplay.textContent = `${amount} ${from} = ${data.conversion_result.toFixed(2)} ${to}`;
@@ -191,6 +192,7 @@ document.querySelector(".convert_BTN").addEventListener("click", convertCurrency
 
 // Initialize
 populateCurrencies();
+
 
 
 

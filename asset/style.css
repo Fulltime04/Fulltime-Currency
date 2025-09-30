@@ -126,7 +126,6 @@ body::-webkit-scrollbar-thumb {
     /*border: 2px solid red;*/
     background: #332b00;
     color: white;
-    display: flex;
     align-items: center;
     justify-content: center;
     min-height: fit-content;
@@ -137,6 +136,7 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
     padding: 5px;
     font-size: 1.5em;
+    display: none;
 }
 
 .Section_Wrapper{

@@ -142,7 +142,6 @@ async function fetchData(url) {
 // Populate currency dropdowns
 async function populateCurrencies() {
     loader.style.display = "flex";
-
     try {
         const data = await fetchData("https://currencybackend-1.onrender.com/api/symbols/");
         const symbols = data.symbols;
@@ -162,6 +161,7 @@ async function populateCurrencies() {
     } finally {
         loader.style.display = "none";
         document.body.classList.add("hidden");
+        document.querySelector(".Footer_Wrapper").style.display = "flex";
     }
 }
 

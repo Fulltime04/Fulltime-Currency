@@ -14,7 +14,6 @@ body{
     font-family: 'Arial', sans-serif;
     overflow: hidden !important;
     position: relative;
-    overflow-y: auto;
     display: flex;
     flex-direction: column;
     /*border: 2px solid red;*/

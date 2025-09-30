@@ -116,6 +116,11 @@ document.addEventListener("keydown", function(e) {
         convert_BTN.click()
     }
 })
+document.addEventListener("keyup", function(e) {
+    if (e.key === "Enter") {
+        convert_BTN.click()
+    }
+})
 
 const loader = document.querySelector(".loader");
 const fromSelect = document.getElementById("fromCurrency");
@@ -156,7 +161,7 @@ async function populateCurrencies() {
         alert("Failed to load currencies. Check your internet connection.");
     } finally {
         loader.style.display = "none";
-        document.body.classList.add("hidden")
+        document.body.classList.add("hidden");
     }
 }
 
